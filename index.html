@@ -21,7 +21,7 @@
 <body>
 
     <h1>🧞‍♂️ FitGenie — Privacy Policy</h1>
-    <p><strong>Last updated:</strong> August 1, 2026</p>
+    <p><strong>Last updated:</strong> October 16, 2026</p>
 
     <p>
         FitGenie is developed by Fahad Saeed. This Privacy Policy explains how we collect,
@@ -33,19 +33,23 @@
     <ul>
         <li><strong>Account Information:</strong> Name, email address when you register or sign in with Google.</li>
         <li><strong>Fitness Data:</strong> Workout logs, step counts, nutrition entries, and health goals you enter manually.</li>
-        <li><strong>Photos:</strong> Images you choose to upload for meal scanning (via camera or gallery). These are sent to Google Gemini AI for nutritional analysis.</li>
+        <li><strong>AI Chat Messages:</strong> The messages you type into the AI coach, together with the fitness context you have entered (such as goals and intake), so the AI can give relevant answers.</li>
+        <li><strong>Photos:</strong> Images you choose to upload for meal scanning (via camera or gallery). These are sent to our AI providers (Groq and Google Gemini) for nutritional analysis.</li>
         <li><strong>Profile Photo:</strong> Optional profile picture stored in Firebase Storage.</li>
         <li><strong>Google Fit Data:</strong> Steps, calories, and activity data if you choose to connect Google Fit (optional).</li>
         <li><strong>Device Data:</strong> Step count data from your device's pedometer sensor.</li>
+        <li><strong>Advertising Data:</strong> The app shows ads through Google AdMob. AdMob may collect your device's advertising ID and general device and usage information to serve and measure ads (see Section 5).</li>
+        <li><strong>Usage Limits:</strong> A simple daily counter of your AI chat usage, stored in Firebase Firestore.</li>
     </ul>
 
     <h2>2. How We Use Your Information</h2>
     <ul>
         <li>To provide personalized fitness tracking, workout plans, and nutrition logging.</li>
-        <li>To power the AI coach (Gemini AI) with your goals and intake data for better suggestions.</li>
+        <li>To power the AI coach with your goals and intake data for better suggestions.</li>
         <li>To analyze meal photos for calorie and macro estimation.</li>
         <li>To sync your data across sessions using Firebase Firestore.</li>
         <li>To send daily reminder notifications (workout, water, nutrition logging).</li>
+        <li>To show ads, and to limit AI usage fairly across users.</li>
     </ul>
 
     <h2>3. Camera Permission</h2>
@@ -55,51 +59,74 @@
         when you explicitly tap the meal scanner. We do not access your camera in the background.
     </p>
 
-    <h2>4. Third-Party Services</h2>
-    <p>We use the following third-party services:</p>
+    <h2>4. AI Features and Third-Party AI Providers</h2>
+    <p>
+        When you use the AI chat or the AI meal scanner, your message or meal photo is sent
+        over an encrypted connection to a secure server operated by us on
+        <strong>Cloudflare Workers</strong>. That server checks that you are a signed-in
+        FitGenie user (using your Firebase sign-in token) and forwards the request to an AI
+        provider to generate a response. The AI providers we use are:
+    </p>
+    <ul>
+        <li><strong>Groq:</strong> primary provider for AI chat and meal scanning. <a href="https://groq.com/privacy-policy" target="_blank">Groq Privacy Policy</a></li>
+        <li><strong>Google Gemini:</strong> backup provider if the primary provider is unavailable. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+    </ul>
+    <p>
+        We do not use your messages or photos for advertising. AI responses are estimates
+        and general wellness information, not medical advice. Please do not include sensitive
+        personal information (such as medical records or government IDs) in chat messages or photos.
+    </p>
+
+    <h2>5. Other Third-Party Services</h2>
+    <p>We also use the following third-party services:</p>
     <ul>
         <li><strong>Firebase (Google):</strong> Authentication, database, and file storage. <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy</a></li>
-        <li><strong>Google Gemini AI:</strong> AI-powered meal analysis and fitness coaching. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+        <li><strong>Cloudflare:</strong> Hosts the secure server that relays AI requests. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Cloudflare Privacy Policy</a></li>
+        <li><strong>Google AdMob:</strong> Shows banner, interstitial, rewarded, and app-open ads. AdMob may use your advertising ID. Where required (for example in the EEA and UK), we ask for your consent before showing personalized ads. You can reset or opt out of personalized ads in your Android settings (Settings &gt; Google &gt; Ads). <a href="https://policies.google.com/technologies/ads" target="_blank">How Google uses data in ads</a></li>
         <li><strong>Google Fit:</strong> Optional fitness data integration. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
         <li><strong>Google Sign-In:</strong> Optional authentication method.</li>
+        <li><strong>Open Food Facts and Wger:</strong> Public databases used for barcode food lookup and exercise information.</li>
     </ul>
 
-    <h2>5. Data Storage & Security</h2>
+    <h2>6. Data Storage & Security</h2>
     <ul>
         <li>Your data is stored securely in <strong>Firebase Firestore</strong> with strict security rules.</li>
         <li>Local data is stored using <strong>Hive encrypted storage</strong> on your device.</li>
+        <li>AI requests travel over encrypted connections, and the credentials for our primary AI provider are kept on our server, not inside the app.</li>
         <li>We do not sell your personal data to any third parties.</li>
-        <li>API keys and sensitive credentials are never exposed in the app.</li>
     </ul>
 
-    <h2>6. Data Retention</h2>
+    <h2>7. Data Retention</h2>
     <p>
         Your data is retained as long as your account is active. You can delete your account
-        and all associated data by contacting us at the email below.
+        and all associated data by contacting us at the email below. Messages and photos sent
+        to AI providers are processed to produce a response; FitGenie does not store meal photos
+        on its own servers for the scanner. Retention by the AI providers is governed by their own policies linked above.
     </p>
 
-    <h2>7. Children's Privacy</h2>
+    <h2>8. Children's Privacy</h2>
     <p>
         FitGenie is not intended for children under the age of 13. We do not knowingly collect
         personal information from children under 13.
     </p>
 
-    <h2>8. Your Rights</h2>
+    <h2>9. Your Rights</h2>
     <p>You have the right to:</p>
     <ul>
         <li>Access the personal data we hold about you.</li>
         <li>Request deletion of your data.</li>
         <li>Disconnect Google Fit integration at any time from the Profile screen.</li>
         <li>Disable notifications from the Notification Settings screen.</li>
+        <li>Reset your advertising ID or opt out of ad personalization in your Android settings.</li>
     </ul>
 
-    <h2>9. Changes to This Policy</h2>
+    <h2>10. Changes to This Policy</h2>
     <p>
         We may update this Privacy Policy from time to time. Any changes will be posted on this page
         with an updated date. Continued use of the app after changes means you accept the new policy.
     </p>
 
-    <h2>10. Contact Us</h2>
+    <h2>11. Contact Us</h2>
     <p>
         If you have any questions about this Privacy Policy, please contact us at:<br>
         📧 <a href="mailto:fahaddragon262@gmail.com">fahaddragon262@gmail.com</a><br>
